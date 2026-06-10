@@ -1,0 +1,48 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.input_box {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+}
+
+.input_field {
+    width: 100%;
+    padding-bottom: functions.rem(4);
+    border-bottom: 1px solid var(--border-color);
+    outline: none;
+    background-color: transparent;
+    color: var(--text-black);
+    @include mixins.font-size(16);
+    @include mixins.transition(border-color);
+
+    &::placeholder {
+        color: transparent;
+        user-select: none;
+    }
+
+    &:focus {
+        border-color: var(--color-accent);
+    }
+
+    &:focus+.input_label,
+    &:not(:placeholder-shown)+.input_label {
+        @include mixins.transform(translateY(calc(-50% - functions.rem(18))) scale(0.8));
+    }
+}
+
+.input_label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    line-height: var(--linear-h-160);
+    transform-origin: left center;
+    color: var(--text-black);
+    background-color: transparent;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    @include mixins.transform(translateY(-50%));
+    @include mixins.transition((transform, color, background-color));
+}

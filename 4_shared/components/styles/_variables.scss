@@ -1,5 +1,9 @@
 :root {
 
+    --color-accent: #2F80ED;
+
+    --border-color: #11111133;
+
     --text-accent: #2F80ED;
     --text-primary: #111111;
     --text-description: #11111180;
@@ -7,4 +11,12 @@
     --text-white: #FFFFFF;
 
     --bg-default: #FFFFFF;
+
+    --linear-h-140: 140%;
+    --linear-h-160: 160%;
+
+    --font-bold: 700;
+    --font-semibold: 600;
+    --font-regular: 400;
+    --font-light: 300;
 }

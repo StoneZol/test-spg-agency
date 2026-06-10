@@ -1,0 +1,30 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: functions.rem(24)
+}
+
+.header_menu {}
+
+.header_logo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.header_contacts {
+    color: var(--text-primary);
+    font-size: functions.rem(17);
+    font-weight: var(--font-semibold);
+}
+
+.header_form_trigger {
+    font-size: functions.rem(15);
+}

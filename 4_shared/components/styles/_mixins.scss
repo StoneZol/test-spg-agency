@@ -1,5 +1,6 @@
-@use './variables' as variables;
-@use "sass:map";
+@use '@styles/functions' as functions;
+@use 'sass:list';
+@use 'sass:meta';
 
 @mixin border-radius($radius: 50%) {
     border-radius: $radius;
@@ -9,6 +10,39 @@
     -o-border-radius: $radius;
 }
 
+@mixin transition($properties: all, $duration: 0.2s, $ease: ease-in) {
+    $transitions: (
+    );
+
+@if meta.type-of($properties)=='list' {
+    @each $property in $properties {
+        $transitions: list.append($transitions,
+                #{$property} $duration $ease,
+                $separator: comma);
+    }
+}
+
+@else {
+    $transitions: (
+        #{$properties} $duration $ease
+    );
+}
+
+transition: $transitions;
+-webkit-transition: $transitions;
+-moz-transition: $transitions;
+-ms-transition: $transitions;
+-o-transition: $transitions;
+}
+
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+}
+
 @mixin square($size) {
     width: $size;
     height: $size;
@@ -16,7 +50,33 @@
 
 @mixin font-size($size) {
     font-size: $size * 1px;
-    font-size: rem($size);
+    font-size: functions.rem($size);
+}
+
+@mixin hover-rise-text {
+    display: inline-grid;
+    overflow: hidden;
+    vertical-align: bottom;
+    line-height: 1;
+
+    &__item {
+        grid-area: 1 / 1;
+        @include transition(transform, 0.3s, ease-in-out);
+
+        &:last-child {
+            @include transform(translateY(100%));
+        }
+    }
+
+    @include hover() {
+        .hover-rise-text__item:first-child {
+            @include transform(translateY(-300%));
+        }
+
+        .hover-rise-text__item:last-child {
+            @include transform(translateY(0));
+        }
+    }
 }
 
 @mixin hover() {
@@ -31,7 +91,7 @@
     }
 
     &:focus-visible {
-        outline: 2px solid var(--additional-indigo);
+        // outline: 2px solid var(--additional-indigo);
         @content;
     }
 }

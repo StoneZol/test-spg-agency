@@ -1,0 +1,11 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.menu_button_box {
+    display: flex;
+    align-items: center;
+    gap: functions.rem(12);
+    @include mixins.font-size(13);
+    font-weight: var(--font-semibold);
+    letter-spacing: 7%;
+}
