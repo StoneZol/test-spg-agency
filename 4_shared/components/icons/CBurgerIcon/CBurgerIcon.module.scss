@@ -1,0 +1,34 @@
+.icon {
+    display: block;
+    overflow: visible;
+
+    .lineTop,
+    .lineMiddle,
+    .lineBottom {
+        transition: transform 0.25s ease;
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            .lineTop {
+                transform: translateY(-2px);
+            }
+
+            .lineBottom {
+                transform: translateY(2px);
+            }
+        }
+    }
+
+    &:active {
+        .lineTop {
+            transform: translateY(-2px);
+        }
+
+        .lineBottom {
+            transform: translateY(2px);
+        }
+    }
+}
