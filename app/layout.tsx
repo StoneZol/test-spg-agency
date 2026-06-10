@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "@styles/App.scss";
 import { Header } from "@/1_widgets/Header";
+import { DialogProvider } from "@/4_shared/components/custom/Dialog";
 
 const ProximaNova = localFont({
     src: [
@@ -45,10 +46,12 @@ export default function RootLayout({
     return (
         <html lang="ru" className={`${ProximaNova.variable}`}>
             <body>
-                <Header />
-                <main>
-                    {children}
-                </main>
+                <DialogProvider>
+                    <Header />
+                    <main>
+                        {children}
+                    </main>
+                </DialogProvider>
             </body>
         </html>
     );

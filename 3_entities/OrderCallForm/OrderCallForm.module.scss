@@ -1,0 +1,51 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.order_call_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: functions.rem(50);
+}
+
+.order_call_form_policy {
+    color: var(--text-description);
+    font-size: functions.rem(12);
+    line-height: var(--linear-h-140);
+    text-align: center;
+}
+
+.order_call_form_policy_link {
+    text-decoration: underline;
+    @include mixins.transition(color);
+
+    &:hover {
+        color: var(--text-accent);
+    }
+}
+
+.order_call_form_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: functions.rem(41);
+}
+
+.order_call_form_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: functions.rem(20);
+}
+
+.order_call_form_title {
+    color: var(--text-black);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    font-size: functions.rem(40);
+    line-height: var(--linear-h-120);
+    text-align: center;
+}
+
+.order_call_form_button {
+    height: functions.rem(62);
+}

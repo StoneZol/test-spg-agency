@@ -23,7 +23,8 @@
             "export default <FTName>;"
         ],
         "ComponentsModule": [
-            "@use '@styles/mixins' as mixins;"
+            "@use '@styles/mixins' as mixins;",
+            "@use '@styles/functions' as functions;"
         ],
         "ComponentsHooks": [
             "// eslint-disable-next-line @typescript-eslint/no-unused-vars",

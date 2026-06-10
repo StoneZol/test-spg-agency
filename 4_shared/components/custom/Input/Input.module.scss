@@ -5,25 +5,20 @@
     position: relative;
     display: inline-flex;
     width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    @include mixins.transition(border-color);
 }
 
 .input_field {
     width: 100%;
-    padding-bottom: functions.rem(4);
-    border-bottom: 1px solid var(--border-color);
     outline: none;
     background-color: transparent;
     color: var(--text-black);
     @include mixins.font-size(16);
-    @include mixins.transition(border-color);
 
     &::placeholder {
         color: transparent;
         user-select: none;
-    }
-
-    &:focus {
-        border-color: var(--color-accent);
     }
 
     &:focus+.input_label,
@@ -34,8 +29,9 @@
 
 .input_label {
     position: absolute;
+    padding-bottom: functions.rem(4);
     left: 0;
-    top: 50%;
+    top: 40%;
     line-height: var(--linear-h-160);
     transform-origin: left center;
     color: var(--text-black);

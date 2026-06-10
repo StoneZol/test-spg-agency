@@ -1,3 +1,9 @@
 .hover-rise-text {
     @include hover-rise-text;
 }
+
+.hover-rise-group {
+    @include hover() {
+        @include hover-rise-text-items-active;
+    }
+}

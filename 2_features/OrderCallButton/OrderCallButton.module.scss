@@ -1,0 +1,7 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.order_call_button {
+    font-size: functions.rem(15);
+    composes: hover-rise-group from global;
+}

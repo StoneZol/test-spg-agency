@@ -53,6 +53,27 @@ transition: $transitions;
     font-size: functions.rem($size);
 }
 
+@mixin hover-rise-text-items-active {
+    .hover-rise-text__item:first-child {
+        @include transform(translateY(-250%));
+    }
+
+    .hover-rise-text__item:last-child {
+        @include transform(translateY(0));
+    }
+}
+
+// для .module.scss — селекторы потомка не должны хешироваться
+@mixin hover-rise-text-active {
+    :global(.hover-rise-text__item:first-child) {
+        @include transform(translateY(-250%));
+    }
+
+    :global(.hover-rise-text__item:last-child) {
+        @include transform(translateY(0));
+    }
+}
+
 @mixin hover-rise-text {
     display: inline-grid;
     overflow: hidden;
@@ -67,15 +88,11 @@ transition: $transitions;
             @include transform(translateY(100%));
         }
     }
+}
 
+@mixin hover-rise-group {
     @include hover() {
-        .hover-rise-text__item:first-child {
-            @include transform(translateY(-300%));
-        }
-
-        .hover-rise-text__item:last-child {
-            @include transform(translateY(0));
-        }
+        @include hover-rise-text-active;
     }
 }
 
@@ -84,15 +101,6 @@ transition: $transitions;
         &:hover {
             @content;
         }
-    }
-
-    &:active {
-        @content;
-    }
-
-    &:focus-visible {
-        // outline: 2px solid var(--additional-indigo);
-        @content;
     }
 }
 

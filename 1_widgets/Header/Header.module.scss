@@ -1,4 +1,3 @@
-@use '@styles/mixins' as mixins;
 @use '@styles/functions' as functions;
 
 .header {
@@ -9,6 +8,15 @@
     justify-content: space-between;
     width: 100%;
     padding: functions.rem(24)
+}
+
+.header_select {
+    composes: hover-rise-group from global;
+}
+
+.header_form_trigger {
+    font-size: functions.rem(15);
+    composes: hover-rise-group from global;
 }
 
 .header_menu {}
@@ -23,8 +31,4 @@
     color: var(--text-primary);
     font-size: functions.rem(17);
     font-weight: var(--font-semibold);
-}
-
-.header_form_trigger {
-    font-size: functions.rem(15);
 }

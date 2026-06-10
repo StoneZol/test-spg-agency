@@ -1,17 +1,23 @@
 @use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
 
 .button {
+    width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     @include mixins.transition((background-color, color));
+    text-transform: uppercase;
+    letter-spacing: 7%;
+    font-weight: var(--font-semibold);
 }
 
 .button_default {
     background-color: var(--color-accent);
     color: var(--text-white);
-    padding: 10px 24px;
+    padding: functions.rem(24) functions.rem(69);
     @include mixins.border-radius(100px);
+    @include mixins.font-size(14);
 }
 
 .button_outline {

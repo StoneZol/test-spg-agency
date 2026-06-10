@@ -33,6 +33,7 @@ input,
 a {
     font-family: var(--font-proxima-nova), sans-serif;
     all: unset;
+    box-sizing: border-box;
     text-decoration: none;
     color: inherit;
     color: var(--greyscale-900);
