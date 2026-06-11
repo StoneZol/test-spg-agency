@@ -1,17 +1,16 @@
+@use '@styles/mixins' as mixins;
 @use '@styles/functions' as functions;
 
 .header {
     position: fixed;
+    z-index: var(--z-header);
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: space-between;
     width: 100%;
-    padding: functions.rem(24)
-}
-
-.header_select {
-    composes: hover-rise-group from global;
+    background: var(--bg-default);
+    composes: global-px global-py from global;
 }
 
 .header_form_trigger {

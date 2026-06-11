@@ -1,3 +1,5 @@
+@use '@styles/functions' as functions;
+
 .hover-rise-text {
     @include hover-rise-text;
 }
@@ -6,4 +8,22 @@
     @include hover() {
         @include hover-rise-text-items-active;
     }
+}
+
+.global-px {
+    padding-left: functions.rem(40);
+    padding-right: functions.rem(40);
+}
+
+.global-py {
+    padding-top: functions.rem(29);
+    padding-bottom: functions.rem(29);
+}
+
+.global-pb {
+    padding-bottom: functions.rem(40);
+}
+
+.global-pt {
+    padding-top: functions.rem(120);
 }

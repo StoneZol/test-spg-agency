@@ -31,7 +31,8 @@
         "**/*.tsx",
         ".next/types/**/*.ts",
         ".next/dev/types/**/*.ts",
-        "**/*.mts"
+        "**/*.mts",
+        "4_shared/components/icons/CPlayIcon"
     ],
     "exclude": ["node_modules"]
 }

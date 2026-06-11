@@ -1,0 +1,22 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.descriptionText {
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.descriptionText_small {
+    @include mixins.font-size(16);
+    line-height: var(--linear-h-160);
+}
+
+.descriptionText_medium {
+    @include mixins.font-size(26);
+    line-height: var(--linear-h-140);
+}
+
+.accent_text {
+    color: var(--text-accent);
+}

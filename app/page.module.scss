@@ -1,0 +1,109 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero {
+    width: 100%;
+    height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    composes: global-px global-pt from global;
+}
+
+.hero_content {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.hero_image {
+    width: 100%;
+    max-height: functions.rem(600);
+
+    img {
+        @extend .img;
+        aspect-ratio: 1760 / 600;
+    }
+}
+
+//! PR
+
+.pr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: calc(var(--global-pt) / 6);
+    composes: global-px global-pb from global;
+}
+
+.pr_left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pr_left_title {
+    width: 80%;
+    text-align: end;
+    font-size: functions.rem(13);
+    color: var(--text-accent);
+    text-transform: uppercase;
+}
+
+.pr_left_image {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    max-height: functions.rem(900);
+
+    img {
+        aspect-ratio: 733 / 900;
+        @extend .img;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include mixins.transform(translate(50%, 50%));
+    }
+}
+
+.pr_right {
+    width: calc(50% - 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pr_right_bibka {
+    width: functions.rem(49);
+    height: functions.rem(9);
+    @include mixins.border-radius(3px);
+    background: var(--color-accent);
+    @include mixins.transform(translateY(500%));
+}
+
+.pr_right_description_box {
+    width: 100%;
+    max-width: functions.rem(454);
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}

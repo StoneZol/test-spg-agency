@@ -1,0 +1,79 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.select {
+    min-width: functions.rem(180);
+    cursor: pointer;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    composes: hover-rise-group from global;
+}
+
+.value_container {
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.value,
+.placeholder {
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: var(--font-semibold);
+    font-size: functions.rem(13);
+    color: var(--text-accent);
+    cursor: pointer;
+
+    :global(.hover-rise-text) {
+        cursor: pointer;
+    }
+}
+
+.value_text {
+    display: block;
+    cursor: pointer;
+
+    :global(.hover-rise-text) {
+        cursor: pointer;
+    }
+}
+
+.menu_portal {
+    z-index: var(--z-header-dropdown);
+}
+
+.menu {
+    margin-top: functions.rem(8);
+    background: var(--bg-default);
+    overflow: hidden;
+    @include mixins.border-radius(functions.rem(8));
+    box-shadow: 0 functions.rem(8) functions.rem(24) rgb(17 17 17 / 12%);
+}
+
+.menu_list {
+    padding: functions.rem(4);
+}
+
+.option {
+    padding: functions.rem(10) functions.rem(12);
+    font-size: functions.rem(13);
+    color: var(--text-primary);
+    cursor: pointer;
+    @include mixins.border-radius(functions.rem(6));
+}
+
+.option_focused {
+    background: rgb(47 128 237 / 8%);
+}
+
+.option_selected {
+    color: var(--text-accent);
+    font-weight: var(--font-semibold);
+}

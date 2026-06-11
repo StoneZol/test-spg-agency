@@ -1,3 +1,5 @@
+@use '@styles/functions' as functions;
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -20,7 +22,6 @@ body {
     flex-direction: column;
     font-family: var(--font-proxima-nova), sans-serif;
     background-color: var(--bg-default);
-    min-height: 100dvh;
 }
 
 main {

@@ -12,6 +12,8 @@
 
     --bg-default: #FFFFFF;
 
+    --player-overlay: #2F80ED4D;
+
     --linear-h-120: 120%;
     --linear-h-140: 140%;
     --linear-h-160: 160%;
@@ -20,4 +22,12 @@
     --font-semibold: 600;
     --font-regular: 400;
     --font-light: 300;
+
+    --global-px: 40px;
+    --global-py: 29px;
+    --global-pb: 40px;
+    --global-pt: 120px;
+
+    --z-header: 999;
+    --z-header-dropdown: 1100;
 }
