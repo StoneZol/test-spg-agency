@@ -1,3 +1,5 @@
+@use '@styles/mixins' as mixins;
+
 :root {
 
     --color-accent: #2F80ED;
@@ -30,4 +32,33 @@
 
     --z-header: 999;
     --z-header-dropdown: 1100;
+
+    @include mixins.first-breakpoint() {
+        --global-px: 20px;
+        --global-py: 14.5px;
+        --global-pb: 20px;
+        --global-pt: 60px;
+    }
+
+    @include mixins.second-breakpoint() {
+        --global-px: 20px;
+        --global-py: 14.5px;
+        --global-pb: 20px;
+        --global-pt: 60px;
+    }
+
+    @include mixins.third-breakpoint() {
+        --global-px: 30px;
+        --global-py: 20px;
+        --global-pb: 30px;
+        --global-pt: 100px;
+    }
+
+    @include mixins.fifth-breakpoint() {
+        --global-px: 80px;
+        --global-py: 42px;
+        --global-pb: 80px;
+        --global-pt: 120px;
+    }
+
 }

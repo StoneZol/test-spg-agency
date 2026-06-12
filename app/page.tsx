@@ -9,7 +9,9 @@ export default function Home() {
     return (
         <div className={styles.home}>
             <section className={styles.hero}>
-                <div className={styles.hero_image}><Image src="/hero.webp" alt="image" width={1760} height={600} /></div>
+                <div className={styles.hero_image}>
+                    <Image src="/hero.webp" alt="image" width={1760} height={600} loading="eager" />
+                </div>
                 <div className={styles.hero_content}>
                     <DescriptionText
                         leftText="Дом бизнес-класса"

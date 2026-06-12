@@ -11,19 +11,19 @@
 }
 
 .global-px {
-    padding-left: functions.rem(40);
-    padding-right: functions.rem(40);
+    padding-left: var(--global-px);
+    padding-right: var(--global-px);
 }
 
 .global-py {
-    padding-top: functions.rem(29);
-    padding-bottom: functions.rem(29);
+    padding-top: var(--global-py);
+    padding-bottom: var(--global-py);
 }
 
 .global-pb {
-    padding-bottom: functions.rem(40);
+    padding-bottom: var(--global-pb);
 }
 
 .global-pt {
-    padding-top: functions.rem(120);
+    padding-top: var(--global-pt);
 }

@@ -104,6 +104,16 @@ transition: $transitions;
     }
 }
 
+@mixin px ($size) {
+    padding-left: functions.rem($size);
+    padding-right: functions.rem($size);
+}
+
+@mixin py ($size) {
+    padding-top: functions.rem($size);
+    padding-bottom: functions.rem($size);
+}
+
 @mixin first-breakpoint() {
     @media (max-width: 767px) {
         @content;
@@ -123,13 +133,13 @@ transition: $transitions;
 }
 
 /* C этого верстаем */
-/* @mixin fourth-breakpoint() {
+@mixin fourth-breakpoint() {
     @media (max-width: 1769px) {
         @content;
     }
-} */
+}
 
-@mixin fourth-breakpoint() {
+@mixin fifth-breakpoint() {
     @media (min-width: 1770px) {
         @content;
     }

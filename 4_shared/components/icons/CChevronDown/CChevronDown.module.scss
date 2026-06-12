@@ -1,0 +1,9 @@
+@use '@styles/mixins' as mixins;
+@use '@styles/functions' as functions;
+
+.icon {
+    @include mixins.fifth-breakpoint() {
+        width: functions.rem(14);
+        height: functions.rem(15);
+    }
+}

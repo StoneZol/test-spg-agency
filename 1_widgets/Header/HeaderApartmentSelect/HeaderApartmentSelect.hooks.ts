@@ -26,9 +26,10 @@ export const useHeaderApartmentSelect = () => {
 
     const classNames = useMemo<ClassNamesConfig<ApartmentOption, false>>(
         () => ({
+            container: () => styles.container,
             control: () => styles.control,
             valueContainer: () => styles.value_container,
-            singleValue: () => styles.value,
+            singleValue: () => styles.single_value,
             placeholder: () => styles.placeholder,
             menuPortal: () => styles.menu_portal,
             menu: () => styles.menu,
@@ -47,20 +48,56 @@ export const useHeaderApartmentSelect = () => {
 
     const selectStyles = useMemo<StylesConfig<ApartmentOption, false>>(
         () => ({
+            container: (base) => ({
+                ...base,
+                display: "flex",
+                width: "100%",
+            }),
             control: (base) => ({
                 ...base,
+                display: "flex",
+                width: "100%",
+                minHeight: "unset",
                 cursor: "pointer",
             }),
             valueContainer: (base) => ({
                 ...base,
+                display: "flex",
+                alignItems: "center",
+                flex: "1 1 auto",
+                width: "100%",
+                padding: 0,
                 cursor: "pointer",
+            }),
+            input: (base) => ({
+                ...base,
+                position: "absolute",
+                opacity: 0,
+                width: 1,
+                height: 1,
+                margin: 0,
+                padding: 0,
+                border: 0,
+                minWidth: 0,
             }),
             singleValue: (base) => ({
                 ...base,
+                position: "static",
+                top: "auto",
+                transform: "none",
+                margin: 0,
+                width: "100%",
+                maxWidth: "none",
+                color: "inherit",
                 cursor: "pointer",
             }),
             placeholder: (base) => ({
                 ...base,
+                position: "static",
+                margin: 0,
+                width: "100%",
+                maxWidth: "none",
+                color: "inherit",
                 cursor: "pointer",
             }),
             option: (base) => ({

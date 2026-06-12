@@ -6,11 +6,23 @@
     z-index: var(--z-header);
     display: flex;
     align-items: center;
-    gap: 1rem;
-    justify-content: space-between;
     width: 100%;
     background: var(--bg-default);
+}
+
+.header_content {
     composes: global-px global-py from global;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1760px;
+    margin: 0 auto;
+
+    @include mixins.fifth-breakpoint() {
+        padding-left: functions.rem(100);
+    }
 }
 
 .header_form_trigger {

@@ -1,4 +1,4 @@
 export type HoverRiseTextProps = {
-    children: string;
+    children: React.ReactNode;
     className?: string;
 };
