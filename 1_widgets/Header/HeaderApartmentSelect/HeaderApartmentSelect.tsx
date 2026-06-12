@@ -3,8 +3,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import type {
     MenuProps,
-    PlaceholderProps,
-    SingleValueProps,
     ValueContainerProps,
 } from "react-select";
 import { components } from "react-select";
@@ -19,18 +17,35 @@ import { CChevronDown } from "@/4_shared/components/icons/CChevronDown";
 const AnimatedValueContainer = ({
     children,
     ...props
-}: ValueContainerProps<ApartmentOption, false>) => (
-    <components.ValueContainer {...props}>
-        <div className={styles.trigger_text}>{children}</div>
-        <CChevronDown className={styles.trigger_chevron} />
-    </components.ValueContainer>
-);
+}: ValueContainerProps<ApartmentOption, false>) => {
+    const selected = props.getValue()[0];
+    const placeholder = props.selectProps.placeholder;
+    const displayKey = selected?.value ?? "placeholder";
+    const displayText = selected?.label ?? String(placeholder ?? "");
 
-const AnimatedPlaceholder = (props: PlaceholderProps<ApartmentOption, false>) => (
-    <components.Placeholder {...props} className={styles.placeholder}>
-        <HoverRiseText>{String(props.children ?? "")}</HoverRiseText>
-    </components.Placeholder>
-);
+    return (
+        <components.ValueContainer {...props}>
+            <div className={styles.trigger_text}>
+                <AnimatePresence mode="wait" initial={false}>
+                    <motion.span
+                        key={displayKey}
+                        className={styles.single_value_text}
+                        initial={{ opacity: 0, y: "100%" }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: "-100%" }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <HoverRiseText>{displayText}</HoverRiseText>
+                    </motion.span>
+                </AnimatePresence>
+            </div>
+            <div className={styles.hidden_value_children} aria-hidden>
+                {children}
+            </div>
+            <CChevronDown className={styles.trigger_chevron} />
+        </components.ValueContainer>
+    );
+};
 
 const AnimatedMenu = (props: MenuProps<ApartmentOption, false>) => (
     <components.Menu {...props}>
@@ -43,27 +58,6 @@ const AnimatedMenu = (props: MenuProps<ApartmentOption, false>) => (
         </motion.div>
     </components.Menu>
 );
-
-const AnimatedSingleValue = (props: SingleValueProps<ApartmentOption, false>) => {
-    const { data } = props;
-
-    return (
-        <components.SingleValue {...props} className={styles.single_value}>
-            <AnimatePresence mode="wait" initial={false}>
-                <motion.span
-                    key={data.value}
-                    className={styles.single_value_text}
-                    initial={{ opacity: 0, y: "100%" }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: "-100%" }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                >
-                    <HoverRiseText>{data.label}</HoverRiseText>
-                </motion.span>
-            </AnimatePresence>
-        </components.SingleValue>
-    );
-};
 
 const HeaderApartmentSelect = ({ }: HeaderApartmentSelectProps) => {
     const {
@@ -89,8 +83,8 @@ const HeaderApartmentSelect = ({ }: HeaderApartmentSelectProps) => {
                     IndicatorSeparator: () => null,
                     IndicatorsContainer: () => null,
                     Menu: AnimatedMenu,
-                    Placeholder: AnimatedPlaceholder,
-                    SingleValue: AnimatedSingleValue,
+                    Placeholder: () => null,
+                    SingleValue: () => null,
                     ValueContainer: AnimatedValueContainer,
                 }}
                 isSearchable={false}

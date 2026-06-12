@@ -25,7 +25,13 @@ const VideoPlay = ({ }: VideoPlayProps) => {
                 </div>
                 <div className={styles.video_preview_divider} />
                 <div className={styles.video_preview_image}>
-                    <Image src='/videoPrew.webp' alt='video preview' width={241} height={241} />
+                    <Image
+                        src="/videoPrew.webp"
+                        alt="video preview"
+                        width={241}
+                        height={241}
+                        sizes="(max-width: 767px) 131px, (max-width: 1023px) 133px, (max-width: 1280px) 133px, (max-width: 1769px) 186px, 241px"
+                    />
                     <div className={styles.video_preview_image_overlay}>
                         <div className={styles.video_play_button_wrap}>
                             <button

@@ -3,14 +3,36 @@
 
 .select {
     display: flex;
-    width: fit-content;
+    box-sizing: border-box;
+    width: functions.rem(203);
     min-width: functions.rem(203);
+    height: functions.rem(43);
     cursor: pointer;
     background: var(--color-accent);
     color: var(--text-white);
     @include mixins.border-radius(functions.rem(100));
     @include mixins.px(20);
     @include mixins.py(15);
+    @include mixins.adaptive-transition();
+
+    @include mixins.second-breakpoint() {
+        width: functions.rem(188);
+        min-width: functions.rem(188);
+        @include mixins.px(18);
+    }
+
+    @include mixins.third-breakpoint() {
+        width: functions.rem(192);
+        min-width: functions.rem(192);
+    }
+
+    @include mixins.fifth-breakpoint() {
+        width: functions.rem(240);
+        min-width: functions.rem(240);
+        height: functions.rem(51);
+        @include mixins.px(24);
+        @include mixins.py(18);
+    }
 }
 
 .container {
@@ -33,13 +55,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: functions.rem(6);
+    gap: functions.rem(10);
     flex: 1;
     width: 100%;
     padding: 0;
     overflow: visible;
     cursor: pointer;
     text-transform: uppercase;
+    @include mixins.adaptive-transition();
+
+    @include mixins.fifth-breakpoint() {
+        gap: functions.rem(12);
+    }
 }
 
 .trigger_text {
@@ -49,6 +76,15 @@
     align-items: center;
     min-width: 0;
     overflow: hidden;
+}
+
+.hidden_value_children {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .trigger_chevron {
@@ -61,11 +97,25 @@
     width: 100%;
     margin: 0;
     text-transform: uppercase;
+    text-wrap: nowrap;
     cursor: pointer;
     letter-spacing: 7%;
     line-height: 100%;
     font-size: functions.rem(13);
     color: inherit;
+    @include mixins.transition((font-size), 0.3s, ease-in-out);
+
+    @include mixins.second-breakpoint() {
+        font-size: functions.rem(12);
+    }
+
+    @include mixins.third-breakpoint() {
+        font-size: functions.rem(12);
+    }
+
+    @include mixins.fifth-breakpoint() {
+        font-size: functions.rem(15);
+    }
 
     :global(.hover-rise-text) {
         cursor: pointer;

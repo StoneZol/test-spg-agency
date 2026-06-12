@@ -26,26 +26,36 @@ export default function Home() {
             </section>
             <section className={styles.pr}>
                 <div className={styles.pr_left}>
-                    <div className={styles.pr_left_title}>О проекте</div>
-                    <div className={styles.pr_left_image}>
-                        <Image src='/section2.webp' alt='image' width={733} height={900} />
-                        <Logo2MiniIcon className={styles.pr_left_image_logo} />
+                    <div className={styles.pr_left_content}>
+                        <div className={styles.pr_left_title}>
+                            О проекте
+                        </div>
+                        <div className={styles.pr_left_image}>
+                            <Image
+                                src="/section2.webp"
+                                alt="image"
+                                width={733}
+                                height={900}
+                                sizes="(max-width: 767px) 296px, (max-width: 1023px) 290px, (max-width: 1280px) 408px, (max-width: 1769px) 567px, 733px"
+                            />
+                            <Logo2MiniIcon className={styles.pr_left_image_logo} />
+                        </div>
                     </div>
                 </div>
                 <div className={styles.pr_right}>
                     <div className={styles.pr_right_description_box}>
                         <div className={styles.pr_right_bibka} />
                         <DescriptionText
-                            leftText="уютное и безопасное пространство для счастливой,"
+                            leftText={`уютное и безопасное \n пространство для счастливой,`}
                             rightText="спокойной и размеренной жизни"
-                            size="medium"
+                            size="large"
                             leftIsAccent={false}
                             rightIsAccent={true}
                             isNewLine={true}
                         />
                         <DescriptionText
                             leftText="Квартиры от 65 до 356 м2 с чистовой отделкой,"
-                            rightText="балконами, лоджиями и террасами В собственной ЗАКРЫТОЙ охраняемой территориИ."
+                            rightText={`балконами, лоджиями и террасами  В собственной \n ЗАКРЫТОЙ охраняемой территориИ.`}
                             size="small"
                             leftIsAccent={true}
                             rightIsAccent={false}

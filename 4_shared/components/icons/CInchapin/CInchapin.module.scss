@@ -1,6 +1,29 @@
+@use '@styles/mixins' as mixins;
 @use '@styles/functions' as functions;
 
 .cInchapin {
     width: functions.rem(717);
     height: functions.rem(114);
+    flex-shrink: 0;
+    @include mixins.adaptive-transition();
+
+    @include mixins.first-breakpoint() {
+        width: functions.rem(320);
+        height: functions.rem(51);
+    }
+
+    @include mixins.second-breakpoint() {
+        width: functions.rem(688);
+        height: functions.rem(110);
+    }
+
+    @include mixins.third-breakpoint() {
+        width: functions.rem(553);
+        height: functions.rem(88);
+    }
+
+    @include mixins.fifth-breakpoint() {
+        width: functions.rem(862);
+        height: functions.rem(137);
+    }
 }

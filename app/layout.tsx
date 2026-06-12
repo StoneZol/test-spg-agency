@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import "@styles/App.scss";
 import { Header } from "@/1_widgets/Header";
 import { DialogProvider } from "@/4_shared/components/custom/Dialog";
+import { SmoothScrollProvider } from "@/4_shared/providers";
 
 const ProximaNova = localFont({
     src: [
@@ -12,13 +13,13 @@ const ProximaNova = localFont({
             style: "normal",
         },
         {
-            path: "./fonts/ProximaNova-Light.woff2",
-            weight: "300",
+            path: "./fonts/ProximaNova-Regular.woff2",
+            weight: "400",
             style: "normal",
         },
         {
-            path: "./fonts/ProximaNova-Regular.woff2",
-            weight: "400",
+            path: "./fonts/ProximaNova-Light.woff2",
+            weight: "300",
             style: "normal",
         },
         {
@@ -44,13 +45,16 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru" className={`${ProximaNova.variable}`}>
-            <body>
+        <html lang="ru" className={ProximaNova.variable}>
+            <body className={ProximaNova.className}>
                 <DialogProvider>
-                    <Header />
-                    <main>
-                        {children}
-                    </main>
+                    <SmoothScrollProvider />
+                    <div className="root">
+                        <Header />
+                        <main>
+                            {children}
+                        </main>
+                    </div>
                 </DialogProvider>
             </body>
         </html>

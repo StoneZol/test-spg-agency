@@ -2,7 +2,7 @@ import styles from './CInchapin.module.scss';
 
 export default function CInchapin(props: React.SVGProps<SVGSVGElement>) {
     return (
-        <svg className={styles.cInchapin} width="862" height="137" viewBox="0 0 862 137" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <svg className={styles.cInchapin} viewBox="0 0 862 137" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <path d="M245.361 137C268.534 137 284.245 125.881 295.243 110.791L281.299 103.048C273.837 114.365 260.286 122.307 245.361 122.307C216.688 122.307 194.889 99.871 194.889 68.5C194.889 36.9304 216.688 14.6928 245.361 14.6928C260.286 14.6928 273.837 22.8333 281.299 33.9522L295.046 26.2087C284.638 11.3174 268.534 0 245.361 0C207.654 0 178 27.7971 178 68.5C178 109.203 207.654 137 245.361 137Z" fill="black" />
             <path d="M425.209 134.617V2.18359H408.909V59.1676H332.318V2.18359H316.018V134.617H332.318V73.8604H408.909V134.617H425.209Z" fill="black" />
             <path d="M567.964 134.617L515.136 2.18359H494.908L442.277 134.617H460.933L472.52 105.232H537.721L549.307 134.617H567.964ZM532.811 90.5386H477.233L505.12 19.2589L532.811 90.5386Z" fill="black" />

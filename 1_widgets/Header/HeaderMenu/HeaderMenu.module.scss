@@ -5,7 +5,41 @@
     display: flex;
     align-items: center;
     gap: functions.rem(12);
-    @include mixins.font-size(13);
+
+    button {
+        color: var(--color-accent);
+
+        svg {
+            color: inherit;
+        }
+
+        @include mixins.first-breakpoint() {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.menu_label {
     font-weight: var(--font-semibold);
+    line-height: 100%;
     letter-spacing: 7%;
+    text-transform: uppercase;
+    font-size: functions.rem(13);
+    @include mixins.transition((font-size), 0.3s, ease-in-out);
+
+    @include mixins.first-breakpoint() {
+        display: none;
+    }
+
+    @include mixins.second-breakpoint() {
+        font-size: functions.rem(12);
+    }
+
+    @include mixins.third-breakpoint() {
+        font-size: functions.rem(12);
+    }
+
+    @include mixins.fifth-breakpoint() {
+        font-size: functions.rem(15);
+    }
 }

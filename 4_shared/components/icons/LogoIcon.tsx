@@ -1,6 +1,6 @@
 export default function LogoIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
-        <svg width="187" height="30" viewBox="0 0 187 30" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <svg viewBox="0 0 187 30" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             <g clipPath="url(#clip0_2001_92)">
                 <mask id="mask0_2001_92" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="0" y="0" width="187" height="30">
                     <path d="M187 0H0V30H187V0Z" fill="white" />

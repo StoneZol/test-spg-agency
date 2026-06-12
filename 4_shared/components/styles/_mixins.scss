@@ -35,6 +35,10 @@ transition: $transitions;
 -o-transition: $transitions;
 }
 
+@mixin adaptive-transition($duration: 0.3s, $ease: ease-in-out) {
+    @include transition((width, height, max-width, min-width, transform), $duration, $ease);
+}
+
 @mixin transform($value) {
     transform: $value;
     -webkit-transform: $value;
@@ -114,6 +118,16 @@ transition: $transitions;
     padding-bottom: functions.rem($size);
 }
 
+@mixin px-var ($size) {
+    padding-left: $size;
+    padding-right: $size;
+}
+
+@mixin py-var ($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+}
+
 @mixin first-breakpoint() {
     @media (max-width: 767px) {
         @content;
@@ -121,20 +135,20 @@ transition: $transitions;
 }
 
 @mixin second-breakpoint() {
-    @media (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
         @content;
     }
 }
 
 @mixin third-breakpoint() {
-    @media (max-width: 1280px) {
+    @media (min-width: 1024px) and (max-width: 1280px) {
         @content;
     }
 }
 
-/* C этого верстаем */
+// C этого верстаем
 @mixin fourth-breakpoint() {
-    @media (max-width: 1769px) {
+    @media (min-width: 1281px) and (max-width: 1769px) {
         @content;
     }
 }

@@ -8,6 +8,8 @@ const descriptionTextVariants = (size: DescriptionTextProps['size']) => {
             return styles.descriptionText_small;
         case 'medium':
             return styles.descriptionText_medium;
+        case 'large':
+            return styles.descriptionText_large;
     }
 }
 const DescriptionText = ({ leftText, rightText,

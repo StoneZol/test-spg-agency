@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Controller } from 'react-hook-form';
 
-import { Button } from '@/4_shared/components/custom';
+import { Button, HoverRiseText } from '@/4_shared/components/custom';
 import { Input } from '@/4_shared/components/custom/Input';
 
 import { useOrderCallForm } from './OrderCallForm.hooks';
@@ -14,7 +14,9 @@ const OrderCallForm = () => {
 
     return (
         <form className={styles.order_call_form} onSubmit={onSubmit}>
-            <h2 className={styles.order_call_form_title}>Заказать звонок</h2>
+            <h2 className={styles.order_call_form_title}>
+                Заказать звонок
+            </h2>
             <div className={styles.order_call_form_inputs}>
                 <Input id="name" placeholder="Ваше имя" {...form.register('name')} />
                 <Controller
@@ -33,7 +35,9 @@ const OrderCallForm = () => {
                         политикой обработки персональных данных
                     </Link>
                 </p>
-                <Button type="submit" className={styles.order_call_form_button}>Отправить</Button>
+                <Button type="submit" className={styles.order_call_form_button}>
+                    <HoverRiseText>Отправить</HoverRiseText>
+                </Button>
             </div>
         </form>
     );

@@ -8,8 +8,12 @@ const HeaderMenu = ({ }: HeaderMenuProps) => {
     const id = useId();
     return (
         <div className={styles.menu_button_box}>
-            <button id={id}><CBurgerIcon /></button>
-            <label htmlFor={id}>МЕНЮ</label>
+            <button id={id}>
+                <CBurgerIcon />
+            </button>
+            <label htmlFor={id} className={styles.menu_label}>
+                МЕНЮ
+            </label>
         </div>
     );
 };

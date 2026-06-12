@@ -14,9 +14,9 @@ const CBurgerIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => 
             xmlns="http://www.w3.org/2000/svg"
             {...props}
         >
-            <rect className={styles.lineTop} width="37.911" height="2" fill="#2F80ED" />
-            <rect className={styles.lineMiddle} x="0.0585938" y="7" width="37.911" height="2" fill="#2F80ED" />
-            <rect className={styles.lineBottom} x="0.0898438" y="15" width="37.911" height="2" fill="#2F80ED" />
+            <rect className={styles.lineTop} width="37.911" height="2" fill="currentColor" />
+            <rect className={styles.lineMiddle} x="0.0585938" y="7" width="37.911" height="2" fill="currentColor" />
+            <rect className={styles.lineBottom} x="0.0898438" y="14" width="37.911" height="2" fill="currentColor" />
         </svg>
     );
 };

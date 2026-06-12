@@ -5,14 +5,63 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
+    width: functions.rem(454);
+    height: functions.rem(451);
     gap: functions.rem(50);
+    @include mixins.adaptive-transition();
+
+    @include mixins.first-breakpoint() {
+        width: functions.rem(320);
+        height: functions.rem(370);
+        gap: functions.rem(30);
+    }
+
+    @include mixins.second-breakpoint() {
+        width: functions.rem(438);
+        height: functions.rem(432);
+    }
+
+    @include mixins.third-breakpoint() {
+        width: functions.rem(370);
+        height: functions.rem(432);
+    }
+
+    @include mixins.fifth-breakpoint() {
+        width: functions.rem(587);
+        height: functions.rem(522);
+        gap: functions.rem(80);
+    }
 }
 
 .order_call_form_policy {
     color: var(--text-description);
-    font-size: functions.rem(12);
-    line-height: var(--linear-h-140);
+    font-weight: var(--font-normal);
+    letter-spacing: 0;
     text-align: center;
+    font-size: functions.rem(12);
+    line-height: 140%;
+    @include mixins.transition((font-size), 0.3s, ease-in-out);
+
+    @include mixins.first-breakpoint() {
+        font-size: functions.rem(12);
+        line-height: 160%;
+    }
+
+    @include mixins.second-breakpoint() {
+        font-size: functions.rem(11);
+        line-height: 160%;
+    }
+
+    @include mixins.third-breakpoint() {
+        font-size: functions.rem(11);
+        line-height: 160%;
+    }
+
+    @include mixins.fifth-breakpoint() {
+        font-size: functions.rem(14);
+        line-height: 140%;
+    }
 }
 
 .order_call_form_policy_link {
@@ -40,12 +89,84 @@
 .order_call_form_title {
     color: var(--text-black);
     font-weight: var(--font-normal);
+    letter-spacing: 0;
     text-transform: uppercase;
-    font-size: functions.rem(40);
-    line-height: var(--linear-h-120);
     text-align: center;
+    font-size: functions.rem(40);
+    line-height: 120%;
+    @include mixins.transition((font-size), 0.3s, ease-in-out);
+
+    @include mixins.first-breakpoint() {
+        font-size: functions.rem(20);
+        line-height: 140%;
+        text-align: left;
+        padding-left: functions.rem(20);
+    }
+
+    @include mixins.second-breakpoint() {
+        font-size: functions.rem(28);
+        line-height: 140%;
+    }
+
+    @include mixins.third-breakpoint() {
+        font-size: functions.rem(28);
+        line-height: 140%;
+    }
+
+    @include mixins.fifth-breakpoint() {
+        font-size: functions.rem(52);
+        line-height: 120%;
+    }
 }
 
 .order_call_form_button {
+    composes: hover-rise-group from global;
+    box-sizing: border-box;
+    width: functions.rem(228);
     height: functions.rem(62);
+    padding: functions.rem(24) functions.rem(69);
+    border: 1px solid var(--color-accent);
+    line-height: 100%;
+    font-size: functions.rem(14);
+    @include mixins.border-radius(100px);
+    @include mixins.adaptive-transition();
+    @include mixins.transition((background-color, box-shadow, transform), 0.3s, ease-in-out);
+
+    @include mixins.hover() {
+        box-shadow: 0 functions.rem(8) functions.rem(24) rgb(47 128 237 / 35%);
+        @include mixins.transform(scale(1.03));
+    }
+
+    &:active {
+        box-shadow: none;
+        @include mixins.transform(scale(0.97));
+    }
+
+    @include mixins.first-breakpoint() {
+        width: functions.rem(170);
+        height: functions.rem(47);
+        padding: functions.rem(18) functions.rem(50);
+        font-size: functions.rem(11);
+    }
+
+    @include mixins.second-breakpoint() {
+        width: functions.rem(170);
+        height: functions.rem(54);
+        padding: functions.rem(20) functions.rem(40);
+        font-size: functions.rem(14);
+    }
+
+    @include mixins.third-breakpoint() {
+        width: functions.rem(170);
+        height: functions.rem(54);
+        padding: functions.rem(20) functions.rem(40);
+        font-size: functions.rem(14);
+    }
+
+    @include mixins.fifth-breakpoint() {
+        width: functions.rem(234);
+        height: functions.rem(63);
+        padding: functions.rem(24) functions.rem(69);
+        font-size: functions.rem(15);
+    }
 }
