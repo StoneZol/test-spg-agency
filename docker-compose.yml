@@ -1,0 +1,22 @@
+name: repricer
+services:
+  optiguardfront:
+    image: test-spg-agency:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - test-spg-agency
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+      - backend
+      - dokploy-network
+networks:
+  backend:
+    driver: bridge
+    # Включить если кластстер
+    # external: true
+  dokploy-network:
+    external: true

@@ -32,11 +32,13 @@ const ProximaNova = localFont({
 })
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
     title: {
-        default: "SPG Agency | Digital Agency",
-        template: "%s | SPG Agency",
+        default: "INCHAPIN",
+        template: "%s | INCHAPIN",
     },
-    description: "SPG Agency",
+    description:
+        "Дом бизнес-класса для ценителей роскоши. Квартиры от 65 до 356 м² с чистовой отделкой.",
 };
 
 export default function RootLayout({
