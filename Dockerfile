@@ -2,6 +2,10 @@ FROM node:24-alpine AS builder
 WORKDIR /app
 
 
+# Аргументы для сборки
+ARG NEXT_PUBLIC_SITE_URL
+
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 # Копирование package.json и package-lock.json
 COPY package.json .
 COPY package-lock.json .
@@ -42,6 +46,7 @@ USER nextjs
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOST=0.0.0.0
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 
 # Запускаем сервер
 ENTRYPOINT ["dumb-init", "--"]

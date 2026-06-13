@@ -7,7 +7,7 @@ import Logo2MiniIcon from "@/4_shared/components/icons/Logo2MiniIcon";
 import { SetJsonLD } from "@/4_shared/components/warriors/SetJsonLD";
 import { VideoPlay } from "@/2_features/VideoPlay";
 
-import { homeJsonLdSchemas, metadata as homeMetadata } from "./page.seo";
+import { homeJsonLdSchemas, homeMetadata } from "./page.seo";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = homeMetadata;

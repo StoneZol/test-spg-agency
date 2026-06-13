@@ -4,13 +4,16 @@ import type { Organization, WebSite, WithContext } from "schema-dts";
 export const SITE_URL =
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-export const PAGE_TITLE = "INCHAPIN — дом бизнес-класса";
+export const PAGE_TITLE = "INCHAPIN — дома бизнес-класса";
 
 export const PAGE_DESCRIPTION =
-    "Дом бизнес-класса для ценителей роскоши. Квартиры от 65 до 356 м² с чистовой отделкой на закрытой охраняемой территории.";
+    "Дома бизнес-класса для ценителей роскоши. Квартиры от 65 до 356 м² с чистовой отделкой на закрытой охраняемой территории.";
 
-export const metadata: Metadata = {
-    title: PAGE_TITLE,
+export const homeMetadata: Metadata = {
+    title: {
+        default: PAGE_TITLE,
+        template: "%s — INCHAPIN",
+    },
     description: PAGE_DESCRIPTION,
     keywords: [
         "INCHAPIN",
@@ -37,12 +40,6 @@ export const metadata: Metadata = {
                 alt: "INCHAPIN — дом бизнес-класса",
             },
         ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: PAGE_TITLE,
-        description: PAGE_DESCRIPTION,
-        images: ["/hero.webp"],
     },
 };
 

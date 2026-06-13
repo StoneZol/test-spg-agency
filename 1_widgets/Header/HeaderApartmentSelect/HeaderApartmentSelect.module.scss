@@ -10,6 +10,9 @@
     cursor: pointer;
     background: var(--color-accent);
     color: var(--text-white);
+
+    composes: hover-rise-group from global;
+
     @include mixins.border-radius(functions.rem(100));
     @include mixins.px(20);
     @include mixins.py(15);
@@ -48,7 +51,6 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    composes: hover-rise-group from global;
 }
 
 .value_container {
